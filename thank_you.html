@@ -1,0 +1,15 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Coffee and Wifi{% endblock %}
+
+{% block content %}
+<h1 align="center">Thank you for your submission!</h1>
+<hr>
+
+<p align="center">
+    <a href="{{ url_for('cafes')}}">All cafés</a> <br>
+    <a href="{{ url_for('add_cafe')}}">New Submission</a> <br>
+    <a href="{{ url_for('home')}}">Back to Home page</a> <br>
+</p>
+
+{% endblock %}

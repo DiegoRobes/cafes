@@ -1,0 +1,60 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Places{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+        <h1 style="margin-left: 1.5rem;">All Cafes</h1>
+
+	  <table class="table">
+          <tr>
+              <th>
+                  Cafe Name
+              </th>
+              <th>
+                  Location
+              </th>
+              <th>
+                  Wi-Fi
+              </th>
+              <th>
+                  Coffee Price
+              </th>
+          </tr>
+          {% for i in cafes: %}
+          <tr>
+              <td>
+                  {{ i.name }}
+              </td>
+              <td>
+                  {{ i.location }}
+              </td>
+              <td>
+                  {{ i.has_wifi }}
+              </td>
+              <td>
+                  {{ i.coffee_price }}
+              </td>
+          </tr>
+          {% endfor %}
+
+  	  </table>
+         <table class="table">
+          <tr>
+              <td>
+                  <a href="{{ url_for('add_cafe')}}">Submit New Cafe</a>
+              </td>
+              <td align="right">
+                  <a href="{{ url_for('home')}}">Return to index page</a>              </td>
+          </tr>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
